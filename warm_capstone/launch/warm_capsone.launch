@@ -1,0 +1,23 @@
+<launch>
+
+	<arg name="f_maxrange_" default="1.75"/> <!-- 1.7 -->
+	<arg name="f_minrange_" default="0.2"/> <!-- 0.2 -->
+	<arg name="corner_speed_" default="-12.31"/> <!-- -12.33 or -12.34 -->
+	<arg name="normal_speed_" default="-10.7"/> <!-- -11.5 or -11.0-->
+	<arg name="cr_offset_" default="1.2"/> <!-- 1.2 -->
+	<arg name="st_offset_" default="0.7"/> <!-- 0.7 -->
+	<arg name="normal_range_" default="20"/> <!-- 20  also int type -->
+	<arg name="ransac_offset_" default="3.0"/> <!-- 0.7 -->
+
+
+	<node name="warm_capstone_node" pkg="warm_capstone" type="warm_capstone_node" output="screen">
+		<param name="f_maxrange" value="$(arg f_maxrange_)"/>
+		<param name="f_minrange" value="$(arg f_minrange_)"/>
+		<param name="corner_speed" value="$(arg corner_speed_)"/>
+		<param name="normal_speed" value="$(arg normal_speed_)"/>
+		<param name="cr_offset" value="$(arg cr_offset_)"/>
+		<param name="st_offset" value="$(arg st_offset_)"/>
+		<param name="normal_range" value="$(arg normal_range_)"/>
+		<param name="ransac_offset" value="$(arg ransac_offset_)"/>
+	</node>
+</launch>
